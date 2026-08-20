@@ -1,12 +1,14 @@
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
-        int[] res = new int[2];
-        for(int i=0; i<nums.Length-1; i++){
-            for(int j=i+1; j<nums.Length;j++){
-                if (nums[i] + nums[j] == target)
-                    return [i, j];
+        Dictionary<int, int> numToIndex = new Dictionary<int, int>();
+        
+        for (int i = 0; i < nums.Length; i++) {
+            int complement = target - nums[i];
+            if (numToIndex.ContainsKey(complement)) {
+                return new int[] { numToIndex[complement], i };
             }
+            numToIndex[nums[i]] = i;
         }
-        return res;
+        return new int[0];
     }
 }
