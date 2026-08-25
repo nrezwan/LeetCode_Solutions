@@ -11,7 +11,7 @@
  */
 public class Solution {
     public ListNode RemoveNthFromEnd(ListNode head, int n) {
-        if(head == null) 
+        if(head == null || n <= 0) 
             return null;
         
         var fast = head;
@@ -32,10 +32,12 @@ public class Solution {
             }
         }
 
-        //if(slow.val == n){
-            prev.next = slow.next;
-            slow.next = null;
-        //}
+        if (count < n) {
+            return head;
+        }
+
+        prev.next = slow.next;
+        slow.next = null;
         return d1.next;
     }
 }
