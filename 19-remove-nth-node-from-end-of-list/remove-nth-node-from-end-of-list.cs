@@ -20,7 +20,6 @@ public class Solution {
         d1.next = head;
         
         ListNode prev = d1;
-        ListNode next;
         var count = 0;
 
         while(fast != null){
