@@ -8,7 +8,9 @@ class Solution:
         if not head:
             return head
         
-        length, tail = 1, head
+        length = 1
+        tail = head
+        
         while tail.next:
             tail = tail.next
             length += 1
