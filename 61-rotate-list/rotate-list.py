@@ -10,7 +10,6 @@ class Solution:
         
         length = 1
         tail = head
-        
         while tail.next:
             tail = tail.next
             length += 1
